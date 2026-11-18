@@ -28,6 +28,7 @@ while you work.
 - [Step 3 — Choose a first bounty you can finish](#step-3--choose-a-first-bounty-you-can-finish)
 - [Step 4 — Get the kit and read the rules like a contract](#step-4--get-the-kit-and-read-the-rules-like-a-contract)
 - [Step 5 — Build with your agent](#step-5--build-with-your-agent)
+- [What the transcript checks are really asking](#what-the-transcript-checks-are-really-asking)
 - [Step 6 — Grade locally before you spend a submission](#step-6--grade-locally-before-you-spend-a-submission)
 - [Step 7 — Bundle, check, submit](#step-7--bundle-check-submit)
 - [Step 8 — After you submit: status, fixes, resubmits](#step-8--after-you-submit-status-fixes-resubmits)
@@ -201,6 +202,31 @@ One shortcut worth taking: before building, tell your agent to read
 commands, checks and limits included — and an agent that has read it makes fewer procedural
 mistakes than one improvising from the task text.
 
+## What the transcript checks are really asking
+
+Newcomers often read the transcript rules as bureaucracy. They are simpler than they look — each
+check is one plain question about whether the work is genuinely yours:
+
+- **Was the session inside the window?** Every timestamp in your transcripts must fall between
+  the bounty's opening and the moment your entry is received. Work done before the open, however
+  good, belongs to a different contest: none.
+- **Did the agent actually write the files?** A healthy share of the submitted lines must first
+  appear in your transcripts as the agent's own writes or edits. Lines that arrive from outside —
+  pasted into the chat, read back from a file, copied from the kit's starter — do not count as
+  authored, and the starter's lines are excluded from the count entirely.
+- **Was there a revision?** The entrypoint must reach its final form through at least two
+  separate writes or edits. One giant paste-and-done message is exactly the shape the gate is
+  built to refuse.
+- **Was it a real conversation?** A handful of turns with actual text — steering, questions,
+  corrections — rather than a single silent tool call.
+- **Is the run record complete?** The bundle must say what built the entry: the opening prompt,
+  the agent, the model, the effort, the system prompt and instruction files, and the usage
+  records. Withholding any of these is itself a rejection reason.
+
+None of this asks for ceremony. It asks for the thing you were going to do anyway if you built the
+entry honestly: one session, after the open, where your agent writes the work and you steer it.
+Build that way and the gate is invisible.
+
 ## Step 6 — Grade locally before you spend a submission
 
 Where a kit supports local grading, its **Grade locally** section gives the exact command,
@@ -248,7 +274,10 @@ node cli/makefun.mjs submit --competition <bounty-slug> \
 ```
 
 The `--keypair` is the wallet from Step 1's login. It signs the entry (every bounty with an
-escrowed prize requires the signature), and it is the wallet a prize will be paid to.
+escrowed prize requires the signature), and it is the wallet a prize will be paid to. The
+signature also binds the entry to the exact transcripts you uploaded and the exact commit you
+named — so if you change either one afterwards, re-bundle and submit again rather than assuming
+the update carries over.
 
 **The limits, again:** at most **5 submissions per UTC day and 10 in total** per bounty, and your
 latest entry before the deadline is the one that counts. Treat submissions like a budget, not a
@@ -400,6 +429,17 @@ you name. Transcripts are visible only to you and the organisers — never on th
 
 One account belongs to one person. A team enters under a single account and divides any prize
 among themselves.
+</details>
+
+<details>
+<summary><strong>I pushed fixes to GitHub after submitting. Did they count?</strong></summary>
+
+No. An entry is the commit you named at submission, snapshotted at that moment; later pushes do
+not change it. To enter the fixed version, submit again with the new commit — that is what the
+daily submission budget is for. The same applies in reverse at the final re-check: the repository
+must still be public, still yours, and its README must still carry your referral code when the
+organisers look again after the deadline, so do not rename, privatise or gut the repository once
+you have entered it.
 </details>
 
 <details>
